@@ -3,7 +3,7 @@
 {{ $columns := $page.Params.design.columns | default "2" }}
 
 <!-- Accomplishments widget -->
-<div style="overflow: auto; height:400pt; width:100%;">
+
 <div class="col-12 {{if eq $columns "2"}}col-lg-8{{end}}">
   {{ with $page.Content }}{{ . }}{{ end }}
 
@@ -58,4 +58,4 @@
   {{end}}
   {{end}}
 </div>
-</div>
+
