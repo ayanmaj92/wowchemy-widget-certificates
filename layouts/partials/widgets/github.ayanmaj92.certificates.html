@@ -4,7 +4,7 @@
 
 <!-- Accomplishments widget -->
 
-<div class="row  {{if not $st.Title | or (eq $columns "1") }}justify-content-center{{end}}">
+<div class="row  {{if not $page.Title | or (eq $columns "1") }}justify-content-center{{end}}">
 {{ if $page.Title }}
   {{ if eq $columns "1" }}
     <div class="section-heading col-12 mb-3 text-center">
