@@ -4,6 +4,22 @@
 
 <!-- Accomplishments widget -->
 
+<div class="row  {{if not $st.Title | or (eq $columns "1") }}justify-content-center{{end}}">
+{{ if $page.Title }}
+  {{ if eq $columns "1" }}
+    <div class="section-heading col-12 mb-3 text-center">
+      {{ with $page.Title }}<h1 class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+      {{ with $page.Params.subtitle }}<p class="mt-1">{{ . | markdownify | emojify }}</p>{{ end }}
+    </div>
+  {{else}}
+    <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+      {{ with $page.Title }}<h1 class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+      {{ with $page.Params.subtitle }}<p class="mt-1">{{ . | markdownify | emojify }}</p>{{ end }}
+    </div>
+  {{end}}
+{{end}}
+
+<div style="overflow: auto; height:200pt; width:100%;">
 <div class="col-12 {{if eq $columns "2"}}col-lg-8{{end}}">
   {{ with $page.Content }}{{ . }}{{ end }}
 
@@ -58,4 +74,5 @@
   {{end}}
   {{end}}
 </div>
-
+</div>
+</div>
