@@ -19,8 +19,8 @@
   {{end}}
 {{end}}
 
-<div style="overflow: auto; height:200pt; width:100%;">
 <div class="col-12 {{if eq $columns "2"}}col-lg-8{{end}}">
+  <div style="overflow: auto; height:500pt; width:100%;">
   {{ with $page.Content }}{{ . }}{{ end }}
 
   {{ if $page.Params.item }}
