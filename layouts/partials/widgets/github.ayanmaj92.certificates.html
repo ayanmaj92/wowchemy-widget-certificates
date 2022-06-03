@@ -1,7 +1,16 @@
 {{ $ := .root }}
 {{ $page := .page }}
 {{ $columns := $page.Params.design.columns | default "2" }}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
 <!-- Accomplishments widget -->
 
 <div class="row  {{if not $page.Title | or (eq $columns "1") }}justify-content-center{{end}}">
@@ -21,16 +30,6 @@
 
 <div class="col-12 {{if eq $columns "2"}}col-lg-8{{end}}">
   <!--<div style="overflow: auto; height:500pt; width:100%;">-->
-  ::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
   <div style="overflow: scroll; height:450pt; width:100%;">
   {{ with $page.Content }}{{ . }}{{ end }}
 
